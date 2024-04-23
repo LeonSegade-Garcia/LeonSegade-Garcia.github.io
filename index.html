@@ -1,88 +1,46 @@
 <!DOCTYPE html>
 <html> 
-    <!-- HTML is heirarchial: tags like this define elements on the page. 
-    Each tag does something different. For example:
-        - The <html> tag defines the whole document.
-        - The <h1> tag defines a large heading
-        - The <p> tag defines a paragraph
-        - Tags appear as an opening <div> and closing </div> pair
-    -->
 
 <head>    
-    <!-- The head tag links to resources our page needs and defines information about it. Tags in the <head> aren't displayed on the page. -->
-
-    <!-- This is a link to a stylesheet which contains rules about how each element on the page should be defined-->
-    <!-- Try swapping example1.css to another, and take a look at example1.css to see if you understand it-->
     <link rel="stylesheet" type="text/css" href="s2_example1.css">
-    <title>My Portfolio</title> <!-- The title displayed in the browser tab, not on the page itself -->
+    <title>Discount Deductions January 2024</title> 
 
-    <!-- This is a link to the vega-lite which we're using to make graphs -->
     <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
     <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
     <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
 </head>
 
 <body> 
-<!-- The body tag contains the elements that visitors to our page will see. -->
-    <h1 class="big" style="margin-bottom: 0px;"> <!-- We have added a class to the header called "big" which we can use to style it in the CSS -->
-        <!-- This is a header, it is the largest text on the page -->
-        My Portfolio
-    </h1>
-    <p style="margin-top: 0px; color: darkblue">
-        <!-- we're setting the margin to 0px so the header and authour name are close together -->
-        Leon Segade-Garcia | <a href="https://www.linkedin.com/in/leon-segade-garcia-aba462240/">LinkedIn</a> | <a
-            href="https://github.com/LeonSegade-Garcia">GitHub</a>
-    </p>
-    <h3 class="small"> <!-- We have added a class to the header called "small" which we can use to style it in the CSS -->
-        Testing Testing 123
-    </h3>
 
-    <!-- We're organising the page into sections, with each section containing a chart, title and a description -->
+    <h1 class="big" style="margin-bottom: 0px;"> 
+    Discount Deductions January 2024
+    </h1>
+
     <section>
         <div class="chart-description">
-            <h2>Section 1: A basic chart</h2>
-            <p> <!-- This is a paragraph, it's the main way to display text on a web page -->
-                Booooo this chart sucks
+            <h2>Section 1: NIC Trends by Medicine Type</h2>
+            <p> 
             </p>
         </div>
-        <figure id="Location1"></figure> <!-- we give it an id so we can put a vega-lite graph here with VegaEmbed -->
+        <figure id="Location1"></figure> 
     </section>
+
 
     <section>
-        <div class="chart-description"> <!-- we are grouping the title and description together so we can style them together -->
-            <h2>Section 2: Another Chart</h2>
-            <p> <!-- This is a paragraph, it's the main way to display text on a web page -->
-                Wowwww dude... another chart? Real original bucko
+        <div class="chart-description">
+            <h2>Section 2: Interim vs Old Discount</h2>
+            <p> 
             </p>
         </div>
-        <figure id="Location2"></figure> <!-- we give it an id so we can put a vega-lite graph here with VegaEmbed -->
+        <figure id="Location2"></figure> 
     </section>
-
-    <section>
-        <div class="chart-description"> <!-- we are grouping the title and description together so we can style them together -->
-            <h2>Section 3: British GDP Growth</h2>
-            <p> <!-- This is a paragraph, it's the main way to display text on a web page -->
-                Holy Crap! That's so swag
-            </p>
-        </div>
-        <figure id="Location3"></figure> <!-- we give it an id so we can put a vega-lite graph here with VegaEmbed -->
-    </section>
-
-    <!-- Do you want to add more sections? -->
-        <!-- Try copying pasting the section above -->
-        <!-- You'll need to change the id of the figure "<figure id="Location3"... -->
-        <!-- ... and add a new variable for the graph spec in the script at the bottom of the page -->
-
-
-    <!-- This is a script, it's a way to run JavaScript code on the page -->
     <script>
-        // This is a comment in JavaScript - it's a different language to HTML and CSS
-
-        var figure_1_spec = "s2_chart1.json"; // We're storing the URL of the graph we want to display in a variable
-        var figure_2_spec = "https://raw.githubusercontent.com/EconomicsObservatory/courses/main/2/s2_chart2.json";
+     
+        var figure_1_spec = "NIC.json"; 
+        var figure_2_spec = "Difference.json";
         var figure_3_spec = "visualization3.json";
 
-        vegaEmbed('#Location1', figure_1_spec) // We're using the vegaEmbed function to put a graph in the element with id figure_1
+        vegaEmbed('#Location1', figure_1_spec) 
         vegaEmbed('#Location2', figure_2_spec)
         vegaEmbed('#Location3', figure_3_spec)
 

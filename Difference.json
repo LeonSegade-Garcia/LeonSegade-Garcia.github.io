@@ -1,0 +1,19 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": {
+    "text": "Old vs Interim Discount (£m)",
+    "subtitle": ["Oct 22 - Jan 24"]
+  },
+  "width": 600,
+  "height": 400,
+  "data": {
+    "url": "https://raw.githubusercontent.com/LeonSegade-Garcia/LeonSegade-Garcia/main/Discount.csv"
+  },
+  "mark": "line",
+  "encoding": {
+    "x": {"field": "Date", "type": "temporal"},
+    "y": {"field": "Value", "type": "quantitative"},
+    "color": {"field": "Type", "type": "nominal"}
+  },
+  "config": {}
+}
